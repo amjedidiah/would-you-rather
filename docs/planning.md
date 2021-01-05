@@ -1,0 +1,116 @@
+# Project Planning Guide
+
+1. [Identify What Each View Should Look Like](#identify-what-each-view-should-look-like)
+2. [Break Each View Into a Hierarchy of Components](#break-each-view-into-a-hierarchy-of-components)
+3. [Determine What Events Happen in the App](#determine-what-events-happen-in-the-app)
+4. [Determine What Data Lives in the Store](#determine-what-data-lives-in-the-store)
+5. [Coding Stage](#coding-stage)
+
+## Identify What Each View Should Look Like
+
+Draw each view to know what information and data will live on each page.
+Use a mockup app.
+
+## Break Each View Into a Hierarchy of Components
+
+Do this by:
+
+- drawing boxes around every component
+- arranging components into a hierarchy
+
+## Determine What Events Happen in the App
+
+Determine and list what event(s) happens in each component.
+This will also help identify what actions each component will consume
+
+## Determine What Data Lives in the Store
+
+- Data that is required by just one component should live in that component.
+- Data that is required by multiple components or will pass through a component(that doesn't need it) to another(that does need it) should live in the store
+
+### Rules of Normalization
+
+These are the rules to use for normalizing state data
+
+- Each type of data gets its own "table" in the state.
+- Each "data table" should store the individual items in an object, with the IDs of the items as keys and the items themselves as the values.
+- Any references to individual items should be done by storing the item's ID.
+- Arrays of IDs should be used to indicate ordering.
+
+### Accessing the Store From An Action Creator
+
+Generally, accessing the store from an action creator is considered an anti-pattern. Dan Abramov says that the few use cases where it's acceptable to do that are:
+
+> to check cached data before you make a request or to check whether you are authenticated (in other words, doing a conditional dispatch).
+
+## Coding Stage🔨
+
+1. Repo setup
+
+   - Bash Command `npx create-react-app <app_name> --template cra-template-pwa`
+
+   - Repo structure
+     - docs
+       - CONTRIBUTING.md
+       - planning.md
+       - TODO.md
+     - planning
+       - views
+       - actions.md
+       - components.md
+       - data.md
+     - src
+       - components
+         - container
+         - controlled
+         - presentation
+       - definitions.js
+       - redux
+         - actions
+           - routeHandler.js
+           - routeValidator.js
+           - types or types.js
+         - middleware
+         - reducers
+         - selectors or selector.js
+         - store.js
+       - routes
+       - index.js
+     - .editorconfig
+     - .eslintignore
+     - .eslintrc.json
+     - .gitignore
+     - .npmignore
+     - .prettierrc
+     - .yml: superlinter
+     - jsconfig.json
+     - LICENSE
+     - README.md
+     - TODO.md
+
+2. Design the shape of the state and create reducers.
+
+3. Store
+
+   - Create a Redux store.
+   - Connect logger middleware (optional)
+   - Connect Redux Thunk(re redux-saga) middleware
+
+4. For each view that needs access to the store, create the component and connect it to the store.
+
+5. For the component you created in the last step, create actions and action creators. Check that everything works correctly.
+
+6. Repeat Step 3 & Step 4 for each component that needs access to the store.
+
+7. Create presentational components and confirm that everything works correctly.
+
+8. Add React Router.
+
+9. Add finishing touches and make sure the project meets the rubric.
+
+10. Generate jsDOC documentation for `src` folder
+
+11. [Register service worker](../src/index.js)
+    > `serviceWorkerRegistration.register();`
+
+> Remember, this is just a template. As you build more projects, you'll modify this template to suit your needs. You may also find it more intuitive to use a different approach. Regardless of the approach you take, however, planning out your app is imperative to success.
