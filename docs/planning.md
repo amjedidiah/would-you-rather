@@ -58,6 +58,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
        - views
        - actions.md
        - components.md
+       - config.md
        - data.md
      - src
        - components
@@ -74,7 +75,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
          - reducers
          - selectors or selector.js
          - store.js
-       - routes
+       - routes.js
        - index.js
      - .editorconfig
      - .eslintignore
