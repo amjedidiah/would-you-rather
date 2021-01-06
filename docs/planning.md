@@ -9,7 +9,7 @@
 ## Identify What Each View Should Look Like
 
 Draw each view to know what information and data will live on each page.
-Use a mockup app.
+Alternatively, use a mockup app.
 
 ## Break Each View Into a Hierarchy of Components
 

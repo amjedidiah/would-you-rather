@@ -28,6 +28,9 @@
   - [ ] Loading Screen
   - [ ] Toast
   - Children
-    - [ ] LoginContainer
+    - [ ] Layout
       - [ ] Navbar
-      - [ ] AuthForm: LoginForm & RegisterForm
+      - Children
+        - [ ] LoginContainer
+          - [ ] AuthSwitch
+          - [ ] AuthForm: LoginForm or RegisterForm

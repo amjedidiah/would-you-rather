@@ -25,6 +25,6 @@
       - [ ] Navbar
       - [ ] UserCard
       - Children
-        - [ ] OwnerCard
-        - [ ] QuestionList
-          - [ ] QuestionItem
+        - { } UserContainer
+          - [ ] OwnerCard: renders UserCard with different styling
+          - [ ] QuestionList
