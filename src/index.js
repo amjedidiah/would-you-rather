@@ -1,14 +1,23 @@
+// Module imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'index.css';
-import App from 'components/container/App';
+import {Provider} from 'react-redux';
 import * as serviceWorkerRegistration from 'serviceWorkerRegistration';
 import reportWebVitals from 'reportWebVitals';
 
+// Store import
+import store from 'redux/store';
+
+// Root style import
+import 'index.css';
+
+// Component import
+import App from 'components/container/App';
+
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById('root'),
 );
 
