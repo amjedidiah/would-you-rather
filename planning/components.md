@@ -8,20 +8,23 @@
 
 - [ ] Toast
 
-### 404
-
 ### Layout
 
 - [ ] Navbar
 
-- [ ] UserCard: excluded in `login` route
+- [ ] UserCard: included iff **_authedUserID_** is defined
+
+#### 404
+
+- [ ] QuestionList
+  - [ ] QuestionItem
 
 #### LoginContainer
 
-- [ ] AuthSwitch
-- [ ] AuthForm: LoginForm or RegisterForm(with name fiield and different submit action) depending on input from AuthSwitch
+- [ ] UserList
+  - [ ] AuthCard: returns UserItem with **_authInfo_** ( _avatarURL_ and _name_)
 
-#### HomeContainer
+#### QuestionContainer
 
 - [ ] QuestionSwitch
 - [ ] QuestionList
@@ -38,9 +41,10 @@
 
 #### UserContainer
 
-- [ ] OwnerCard: renders UserCard with different styling
-- [ ] QuestionList
+- [ ] OwnerCard: renders UserItem with different styling
+- [ ] QuestionContainer
 
-#### UserList
+#### Leaderboard
 
-- [ ] UserItem
+- [ ] UserList
+  - [ ] UserItem
