@@ -1,9 +1,9 @@
 // Module import
 import {combineReducers} from 'redux';
+import {loadingBarReducer} from 'react-redux-loading';
 
 // Reducer imports
 import authedUser from 'redux/reducers/authedUser';
-import {loadingBarReducer} from 'react-redux-loading';
 import questions from 'redux/reducers/questions';
 import users from 'redux/reducers/users';
 

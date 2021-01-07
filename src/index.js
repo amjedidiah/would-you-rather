@@ -8,9 +8,6 @@ import reportWebVitals from 'reportWebVitals';
 // Store import
 import store from 'redux/store';
 
-// Root style import
-import 'index.css';
-
 // Component import
 import App from 'components/container/App';
 

@@ -3,10 +3,23 @@
  * @typedef {{type: string}} action
  */
 
+
+/**
+ * Definition for action creator
+ * @typedef {() => action} actionCreator
+ */
+
+
 /**
  * A user's answer
  * @typedef {{questionID: string}} answer
  */
+
+/**
+ * A user's answer info
+ * @typedef {{authedUser: id, qid: id, answer: string}} answerInfo
+ */
+
 
 /**
  * A user or question ID
@@ -41,6 +54,11 @@
  */
 
 /**
+ * Definition for state
+ * @typedef {{authedUser: id, questions: questions, users: users}} state
+ */
+
+/**
  * Redux store
  * @typedef {object} store
  * @property {() => action} dispatch - Dispatches actions or action creators
@@ -68,4 +86,13 @@
  *      answers: {questionID: string},
  *      questions: id[]
  * }} | {}} users
+ */
+
+
+/**
+ * MAPSTATETOPROPS DEFINITIONS
+ */
+/**
+ * App State Props
+ * @typedef {{loading: boolean}} appStateProps
  */

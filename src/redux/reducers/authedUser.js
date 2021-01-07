@@ -1,6 +1,6 @@
 /**
  * Reducer function for authedUser
- * @param {id} state - current authedUser state
+ * @param {id | null} state - current authedUser state
  * @param {action} action - Redux action
  * @return {id | null} - returned authedUser state
  */

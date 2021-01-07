@@ -9,20 +9,24 @@ const users = (state = {}, action) => {
    * @type {string}
    */
   const option = action && action.option;
+
   /**
    * @type {id}
    */
   const userID = action && action.userID;
+
   /**
    * @type {id}
    */
   const questionID = action && action.questionID;
+
   /**
    * @type {id[]}
    */
   const updatedQuestions = questionID ?
     [...state[userID].questions, questionID] :
     state[userID] && state[userID].questions;
+
   /**
    * @type {answer}
    */
@@ -35,7 +39,7 @@ const users = (state = {}, action) => {
 
   return (
     {
-      RECEIVE_USERS: action.users,
+      RECEIVE_USERS: {...state, ...action.users},
       SAVE_QUESTION: {
         ...state,
         [userID]: {

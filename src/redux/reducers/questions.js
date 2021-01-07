@@ -21,13 +21,13 @@ const questions = (state = {}, action) => {
   const updatedOption = option ?
     {
       ...state[questionID][option],
-      votes: action.userID,
+      votes: [...state[questionID][option].votes, action.userID],
     } :
     state[questionID] && state[questionID][option];
 
   return (
     {
-      RECEIVE_QUESTIONS: action.questions,
+      RECEIVE_QUESTIONS: {...state, ...action.questions},
       SAVE_QUESTION: {
         ...state,
         [questionID]: action.question,
@@ -42,5 +42,6 @@ const questions = (state = {}, action) => {
     }[action.type] || state
   );
 };
+
 // Export questions reducer
 export default questions;
