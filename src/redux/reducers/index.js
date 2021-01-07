@@ -1,4 +1,4 @@
-// Module imports
+// Module import
 import {combineReducers} from 'redux';
 
 // Reducer imports

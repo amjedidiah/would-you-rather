@@ -14,9 +14,9 @@
  */
 
 /**
-  * A question's option
-  * @typedef {{votes: id[], text: string}} option
-  */
+ * A question's option
+ * @typedef {{votes: id[], text: string}} option
+ */
 
 /**
  * A question object
@@ -38,6 +38,14 @@
  *      optionOne: {votes: id[], text: string},
  *      optionTwo: {votes: id[], text: string}
  * }} | {}} questions
+ */
+
+/**
+ * Redux store
+ * @typedef {object} store
+ * @property {() => action} dispatch - Dispatches actions or action creators
+ * @property {function} getState - Returns current state
+ * @property {function} subscribe - Adds functions to execute on state change
  */
 
 /**

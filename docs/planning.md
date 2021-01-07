@@ -97,7 +97,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
 
    - Create a Redux store.
    - Connect logger middleware (optional)
-   - Connect Redux Thunk(re redux-saga) middleware
+   - Connect Redux Thunk(or redux-saga) middleware
 
 5. For each view that needs access to the store, create the component and connect it to the store.
 
