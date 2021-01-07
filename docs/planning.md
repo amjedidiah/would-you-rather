@@ -66,7 +66,6 @@ Generally, accessing the store from an action creator is considered an anti-patt
          - container
          - controlled
          - presentation
-       - definitions.js
        - redux
          - actions
            - routeHandler.js
@@ -76,8 +75,9 @@ Generally, accessing the store from an action creator is considered an anti-patt
          - reducers
          - selectors or selector.js
          - store.js
-       - routes.js
+       - definitions.js
        - index.js
+       - routes.js
      - .editorconfig
      - .eslintignore
      - .eslintrc.json
@@ -103,7 +103,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
 
 6. For the component you created in the last step, create actions and action creators. Check that everything works correctly.
 
-7. Repeat Step 3 & Step 4 for each component that needs access to the store.
+7. Repeat Step 5 & Step 6 for each component that needs access to the store.
 
 8. Create presentational components and confirm that everything works correctly.
 

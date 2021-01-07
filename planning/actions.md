@@ -4,9 +4,8 @@
 
 - handleInitialData
 
-  - updateUsers
-  - updateQuestions
-  - updateVotes
+  - receiveUsers
+  - receiveQuestions
 
 ## AuthCard
 
@@ -19,3 +18,7 @@
 ## QuestionForm
 
 - handleSaveQuestion
+
+## UserCard
+
+- unsetAuthedUser
