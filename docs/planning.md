@@ -60,6 +60,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
        - components.md
        - config.md
        - data.md
+       - selectors.md
      - src
        - components
          - container
@@ -87,31 +88,32 @@ Generally, accessing the store from an action creator is considered an anti-patt
      - jsconfig.json
      - LICENSE
      - README.md
-     - TODO.md
 
-2. Design the shape of the state and create reducers.
+2. Design the shape of the state
 
-3. Store
+3. Create reducers
+
+4. Store
 
    - Create a Redux store.
    - Connect logger middleware (optional)
    - Connect Redux Thunk(re redux-saga) middleware
 
-4. For each view that needs access to the store, create the component and connect it to the store.
+5. For each view that needs access to the store, create the component and connect it to the store.
 
-5. For the component you created in the last step, create actions and action creators. Check that everything works correctly.
+6. For the component you created in the last step, create actions and action creators. Check that everything works correctly.
 
-6. Repeat Step 3 & Step 4 for each component that needs access to the store.
+7. Repeat Step 3 & Step 4 for each component that needs access to the store.
 
-7. Create presentational components and confirm that everything works correctly.
+8. Create presentational components and confirm that everything works correctly.
 
-8. Add React Router.
+9. Add React Router.
 
-9. Add finishing touches and make sure the project meets the rubric.
+10. Add finishing touches and make sure the project meets the rubric.
 
-10. Generate jsDOC documentation for `src` folder
+11. Generate jsDOC documentation for `src` folder
 
-11. [Register service worker](../src/index.js)
+12. [Register service worker](../src/index.js)
     > `serviceWorkerRegistration.register();`
 
 > Remember, this is just a template. As you build more projects, you'll modify this template to suit your needs. You may also find it more intuitive to use a different approach. Regardless of the approach you take, however, planning out your app is imperative to success.
