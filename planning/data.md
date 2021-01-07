@@ -14,12 +14,18 @@
 
 ```js
 {
-  '8xf0y6ziyjabvozdd253nd': {
+  "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
     author: 'sarahedo',
     timestamp: 1467166872634,
-    optionOne: 'have horrible short term memory',
-    optionTwo: 'have horrible long term memory'
+    optionOne: {
+      votes: ['sarahedo'],
+      text: 'have horrible short term memory',
+    },
+    optionTwo: {
+      votes: [],
+      text: 'have horrible long term memory'
+    }
   }
 }
 ```
@@ -31,20 +37,14 @@
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: '../../images/snow.jpg'
-  }
-}
-```
-
-- votes
-
-```js
-{
-  'sibo93030393': {
-    vote: "sibo93030393",
-    user: "sarahedo",
-    question: "8xf0y6ziyjabvozdd253nd",
-    answer: "optionOne"
+    avatarURL: '../../images/snow.jpg',
+    answers: {
+      "8xf0y6ziyjabvozdd253nd": 'optionOne',
+      "6ni6ok3ym7mf1p33lnez": 'optionOne',
+      "am8ehyc8byjqgar0jgpub9": 'optionTwo',
+      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+    },
+    questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   }
 }
 ```
@@ -118,7 +118,6 @@
 
 ```js
 const question = {
-  text: '',
   optionOne: '',
   optionTwo: ''
 };
