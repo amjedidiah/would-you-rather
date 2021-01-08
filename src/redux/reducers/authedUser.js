@@ -6,9 +6,8 @@
  */
 const authedUser = (state = null, action) =>
   ({
-    SET_AUTHED_USER: action.id,
-    UNSET_AUTHED_USER: null,
-  }[action.type] || state);
+    SET_AUTHED_USER: action.userID,
+  }[action.type] || null);
 
 // Export authedUser reducer
 export default authedUser;

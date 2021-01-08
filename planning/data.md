@@ -80,17 +80,6 @@
 
 - lastVisited: from history
 
-## AuthCard
-
-- authInfo: imported
-
-```json
-[
-  "name",
-  "avatarURL"
-];
-```
-
 ## QuestionContainer
 
 - questionCategory: set by QuestionSwitch

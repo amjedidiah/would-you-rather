@@ -8,8 +8,11 @@ import reportWebVitals from 'reportWebVitals';
 // Store import
 import store from 'redux/store';
 
+// Style import
+import 'index.css';
+
 // Component import
-import App from 'components/container/App';
+import App from 'components/container/App/App';
 
 ReactDOM.render(
     <Provider store={store}>

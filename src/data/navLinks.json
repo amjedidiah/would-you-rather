@@ -1,0 +1,14 @@
+[
+  {
+    "text": "home",
+    "to": "/home"
+  },
+  {
+    "text": "leaderboard",
+    "to": "/leaderboard"
+  },
+  {
+    "text": "new question",
+    "to": "/add"
+  }
+]

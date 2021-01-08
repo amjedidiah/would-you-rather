@@ -1,0 +1,13 @@
+.img-holder {
+  overflow: hidden;
+}
+
+button.navbar-toggler,
+button.buttonnavbar-toggler:hover {
+  outline: 0 !important;
+  border: none !important;
+}
+
+.text-primary--custom {
+  color: #741cfe;
+}

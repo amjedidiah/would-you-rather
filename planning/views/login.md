@@ -29,5 +29,5 @@
     - [ ] Layout
       - [ ] Navbar
       - Children
-        - [ ] UserList
-          - [ ] AuthCard: returns UserItem with just _avatarURL_ and _name_
+        - [ ] Login
+          - [ ] AuthCard: : shows ( _avatarURL_ and _name_)

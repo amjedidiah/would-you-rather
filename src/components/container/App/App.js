@@ -1,14 +1,21 @@
 // Module imports
-import React, {Component} from 'react';
+import {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import LoadingBar from 'react-redux-loading';
+
+// Style import
+import './app.css';
 
 // Action creator imports
 import {handleInitialData} from 'redux/actions/shared';
 
 // Selector imports
 import {getLoading} from 'redux/selectors';
+
+// Component imports
+import Layout from 'components/presentation/Layout/Layout';
+import Login from 'components/container/Login/Login';
 
 /**
  * App component
@@ -18,6 +25,7 @@ class App extends Component {
    * App propTypes
    */
   static propTypes = {
+    authedUser: PropTypes.string,
     handleInitialData: PropTypes.func,
     loading: PropTypes.bool,
   };
@@ -33,17 +41,28 @@ class App extends Component {
    * @return {object} The UI DOM object
    */
   render = () => (
-    <div className="App">
-      <LoadingBar /> {!this.props.loading && <p>Would You Rather</p>}
-    </div>
+    <>
+      <LoadingBar />
+      {!this.props.loading && (
+        <Layout authedUser={this.props.authedUser}>
+          {this.props.authedUser && this.props.authedUser !== ' ' ? (
+            <p>Would You Rather</p>
+          ) : (
+            <Login />
+          )}
+        </Layout>
+      )}
+    </>
   );
 }
+
 /**
- * Maps state to Dashboard component props
+ * Maps state to App component props
  * @param {state} state
- * @return {appStateProps}
+ * @return {{loading: boolean}}
  */
-const mapStateToProps = ({questions, users}) => ({
+const mapStateToProps = ({authedUser, questions, users}) => ({
+  authedUser,
   loading: getLoading(questions, users),
 });
 

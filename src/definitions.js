@@ -87,12 +87,3 @@
  *      questions: id[]
  * }} | {}} users
  */
-
-
-/**
- * MAPSTATETOPROPS DEFINITIONS
- */
-/**
- * App State Props
- * @typedef {{loading: boolean}} appStateProps
- */

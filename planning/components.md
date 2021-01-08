@@ -22,7 +22,7 @@
 #### LoginContainer
 
 - [ ] UserList
-  - [ ] AuthCard: returns UserItem with **_authInfo_** ( _avatarURL_ and _name_)
+  - [ ] AuthCard: shows ( _avatarURL_ and _name_)
 
 #### QuestionContainer
 

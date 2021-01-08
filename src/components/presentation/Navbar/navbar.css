@@ -1,0 +1,39 @@
+#navbar {
+  background: #741cfe;
+  color: #fff;
+}
+
+li.nav-item a.nav-link.nav-link--custom {
+  color: #fff;
+}
+
+li.nav-item a.nav-link.nav-link--custom:hover,
+li.nav-item a.nav-link.nav-link--custom.active {
+  text-decoration: line-through;
+  font-weight: 700;
+  font-size: large;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  #navbar {
+    background: transparent;
+    color: unset;
+  }
+
+  li.nav-item a.nav-link.nav-link--custom {
+    color: unset;
+  }
+
+  li.nav-item a.nav-link.nav-link--custom:hover,
+  li.nav-item a.nav-link.nav-link--custom.active {
+    color: #741cfe;
+    border-bottom: 3px solid #741cfe;
+  }
+}
