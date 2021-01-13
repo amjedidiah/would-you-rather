@@ -72,10 +72,6 @@
 ]
 ```
 
-## UserCard
-
-- authedUserID: from parent
-
 ## 404
 
 - lastVisited: from history
@@ -120,10 +116,8 @@ const question = {
 
 - userID: from UserContainer
 
-## UserList
+## UserCard
 
-- userIDs: from parent
-
-## UserItem
-
+- className: from parent
 - userID: from parent
+- onSetAuthedUser: from login

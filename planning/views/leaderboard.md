@@ -3,10 +3,6 @@
 ## Mockup
 
 ![Recommendation1](./mockup/leaderboard-recommendation.jpg)
-![Layout](./mockup/app-layout.png)
-![Navbar](./mockup/navbar.jpg)
-
-> Code to navbar can be found [here](https://codepen.io/aaroniker/pen/rNMmZvq)
 
 ## Requirements
 
@@ -25,13 +21,12 @@
 
 - [ ] App
 
-  - [ ] Loading Bar
+  - [x] Loading Bar
   - [ ] Loading Screen
   - [ ] Toast
   - Children
-    - [ ] Layout
-      - [ ] Navbar
-      - [ ] UserCard
+    - [x] Layout
+      - [x] Navbar
+      - [x] UserCard
       - Children
-        - [ ] UserList
-          - [ ] UserItem
+        - [x] UserCard

@@ -4,21 +4,25 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import LoadingBar from 'react-redux-loading';
 
-// Style import
-import './app.css';
-
 // Action creator imports
 import {handleInitialData} from 'redux/actions/shared';
+
+// Component imports
+import Layout from 'components/presentation/Layout';
+import Login from 'components/container/Login';
 
 // Selector imports
 import {getLoading} from 'redux/selectors';
 
-// Component imports
-import Layout from 'components/presentation/Layout/Layout';
-import Login from 'components/container/Login/Login';
+// Style import
+import './app.css';
 
 /**
  * App component
+ * @component
+ *
+ * @example
+ * return <App />
  */
 class App extends Component {
   /**
@@ -38,28 +42,34 @@ class App extends Component {
 
   /**
    * Renders the App UI
-   * @return {object} The UI DOM object
+   * @return {object} - The UI DOM object
    */
-  render = () => (
-    <>
-      <LoadingBar />
-      {!this.props.loading && (
-        <Layout authedUser={this.props.authedUser}>
-          {this.props.authedUser && this.props.authedUser !== ' ' ? (
-            <p>Would You Rather</p>
-          ) : (
-            <Login />
-          )}
-        </Layout>
-      )}
-    </>
-  );
+  render = () => {
+    const {authedUser, loading} = this.props;
+
+    return (
+      <>
+        <LoadingBar />
+        {!loading && (
+          <Layout authedUser={authedUser}>
+            {authedUser ? (
+              <div className="col-12 col-xl offset-xl-3">
+                Would you rather
+              </div>
+            ) : (
+              <Login />
+            )}
+          </Layout>
+        )}
+      </>
+    );
+  };
 }
 
 /**
  * Maps state to App component props
  * @param {state} state
- * @return {{loading: boolean}}
+ * @return {{authedUser: string, loading: boolean}}
  */
 const mapStateToProps = ({authedUser, questions, users}) => ({
   authedUser,

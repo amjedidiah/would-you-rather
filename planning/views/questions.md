@@ -4,10 +4,6 @@
 
 ![Recommendation1](./mockup/question-recommendation-1.jpg)
 ![Recommendation2](./mockup/question-recommendation-2.jpg)
-![Layout](./mockup/app-layout.png)
-![Navbar](./mockup/navbar.jpg)
-
-> Code to navbar can be found [here](https://codepen.io/aaroniker/pen/rNMmZvq)
 
 ## Requirements
 
@@ -31,13 +27,13 @@
 
 - [ ] App
 
-  - [ ] Loading Bar
+  - [x] Loading Bar
   - [ ] Loading Screen
   - [ ] Toast
   - Children
-    - [ ] Layout
-      - [ ] Navbar
-      - [ ] UserCard
+    - [x] Layout
+      - [x] Navbar
+      - [x] UserCard
       - Children
         - [ ] QuestionDisplay
           - [ ] QuestionAnswerForm
@@ -46,12 +42,12 @@
 
 - [ ] App
 
-  - [ ] Loading Bar
+  - [x] Loading Bar
   - [ ] Loading Screen
   - [ ] Toast
   - Children
-    - [ ] Layout
-      - [ ] Navbar
-      - [ ] UserCard
+    - [x] Layout
+      - [x] Navbar
+      - [x] UserCard
       - Children
         - [ ] QuestionResult

@@ -111,7 +111,7 @@ Generally, accessing the store from an action creator is considered an anti-patt
 
 10. Add finishing touches and make sure the project meets the rubric.
 
-11. Generate jsDOC documentation for `src` folder
+11. Generate jsDOC documentation for `src` folder. Refer [here](./JSDOC.md)
 
 12. [Register service worker](../src/index.js)
     > `serviceWorkerRegistration.register();`

@@ -1,10 +1,11 @@
 #navbar {
-  background: #741cfe;
-  color: #fff;
+  background: var(--tylermcginnis);
+  color: var(--white);
 }
 
 li.nav-item a.nav-link.nav-link--custom {
-  color: #fff;
+  color: var(--white);
+  opacity: 0.8;
 }
 
 li.nav-item a.nav-link.nav-link--custom:hover,
@@ -12,13 +13,24 @@ li.nav-item a.nav-link.nav-link--custom.active {
   text-decoration: line-through;
   font-weight: 700;
   font-size: large;
-  border-bottom: 3px solid #fff;
-  color: #fff;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0.2rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.add {
+  position: fixed;
+  right: 35px;
+  bottom: 35px;
+  font-size: 3rem;
+}
+
+@media (min-width: 576px) {
+  .add {
+    right: 50px;
+    bottom: 45px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -27,13 +39,24 @@ li.nav-item a.nav-link.nav-link--custom.active {
     color: unset;
   }
 
+  .navbar-brand {
+    /* margin-left: 3.5%; */
+    /* margin-left: 2.5rem; */
+    margin-left: 25px;
+  }
+
   li.nav-item a.nav-link.nav-link--custom {
     color: unset;
   }
 
   li.nav-item a.nav-link.nav-link--custom:hover,
   li.nav-item a.nav-link.nav-link--custom.active {
-    color: #741cfe;
-    border-bottom: 3px solid #741cfe;
+    color: var(--tylermcginnis);
+    border-bottom: 3px solid var(--tylermcginnis);
+  }
+
+  .add {
+    position: unset;
+    font-size: unset;
   }
 }

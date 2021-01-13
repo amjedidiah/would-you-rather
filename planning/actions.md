@@ -7,10 +7,6 @@
   - receiveUsers
   - receiveQuestions
 
-## AuthCard
-
-- setAuthedUser
-
 ## QuestionAnswerForm
 
 - handleSaveAnswer
@@ -21,4 +17,5 @@
 
 ## UserCard
 
+- setAuthedUser
 - unsetAuthedUser

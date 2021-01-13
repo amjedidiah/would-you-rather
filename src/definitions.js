@@ -3,12 +3,10 @@
  * @typedef {{type: string}} action
  */
 
-
 /**
  * Definition for action creator
  * @typedef {() => action} actionCreator
  */
-
 
 /**
  * A user's answer
@@ -20,10 +18,14 @@
  * @typedef {{authedUser: id, qid: id, answer: string}} answerInfo
  */
 
-
 /**
  * A user or question ID
  * @typedef {string} id
+ */
+
+/**
+ * A navLink
+ * @typedef {{icon: *, text: string, to: string}} navLink
  */
 
 /**

@@ -5,9 +5,6 @@
 ![Recommendation1](./mockup/login-recommendation-1.jpg)
 ![Recommendation2](./mockup/login-recommendation-2.jpg)
 ![Layout](./mockup/login-layout.jpg)
-![Navbar](./mockup/navbar.jpg)
-
-> Code to navbar can be found [here](https://codepen.io/aaroniker/pen/rNMmZvq)
 
 ## Requirements
 
@@ -20,14 +17,14 @@
 
 ## Components
 
-- [ ] App
+- [x] App
 
-  - [ ] Loading Bar
+  - [x] Loading Bar
   - [ ] Loading Screen
   - [ ] Toast
   - Children
-    - [ ] Layout
-      - [ ] Navbar
+    - [x] Layout
+      - [x] Navbar
       - Children
-        - [ ] Login
-          - [ ] AuthCard: : shows ( _avatarURL_ and _name_)
+        - [x] Login
+          - [x] UserCard: shows only _avatarURL_ and _name_

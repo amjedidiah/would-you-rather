@@ -12,10 +12,6 @@
 
 - **_getAuthedUserID_** : returns authedUserID
 
-## UserCard
-
-- **_getAuthedUser_**: returns authedUser from _authedUserID_ ownProps
-
 ## 404
 
 1. Selectors
@@ -56,7 +52,8 @@
 
 - **_getUserIDs_**: returns ID of users
 
-## UserItem
+## UserCard
 
+- **_getUser_**: returns authedUser from _userID_ ownProps
 - **_getSubmittedQuestionsCount_**
 - **_getAnsweredQuestionsCount_**

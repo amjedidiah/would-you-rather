@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -18,4 +19,17 @@ body,
 *:after {
   box-sizing: inherit;
   transition: all 0.15s !important;
+}
+
+*[class*='fs'],
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1rem !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }

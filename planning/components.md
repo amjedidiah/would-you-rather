@@ -10,9 +10,9 @@
 
 ### Layout
 
-- [ ] Navbar
+- [x] Navbar
 
-- [ ] UserCard: included iff **_authedUserID_** is defined
+- [x] UserCard: display varies depending on if user is loggedIn
 
 #### 404
 
@@ -21,8 +21,7 @@
 
 #### LoginContainer
 
-- [ ] UserList
-  - [ ] AuthCard: shows ( _avatarURL_ and _name_)
+- [ ] UserCard: shows ( _avatarURL_ and _name_)
 
 #### QuestionContainer
 
@@ -41,10 +40,9 @@
 
 #### UserContainer
 
-- [ ] OwnerCard: renders UserItem with different styling
+- [ ] UserCard: renders with different styling
 - [ ] QuestionContainer
 
 #### Leaderboard
 
-- [ ] UserList
-  - [ ] UserItem
+- [ ] UserCard

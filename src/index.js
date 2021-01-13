@@ -5,14 +5,14 @@ import {Provider} from 'react-redux';
 import * as serviceWorkerRegistration from 'serviceWorkerRegistration';
 import reportWebVitals from 'reportWebVitals';
 
+// Component import
+import App from 'components/container/App';
+
 // Store import
 import store from 'redux/store';
 
 // Style import
 import 'index.css';
-
-// Component import
-import App from 'components/container/App/App';
 
 ReactDOM.render(
     <Provider store={store}>
@@ -20,7 +20,6 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'),
 );
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

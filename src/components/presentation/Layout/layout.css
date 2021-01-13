@@ -1,13 +1,18 @@
 .container--layout {
-  background-attachment: auto;
+  background-attachment: fixed;
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 80px;
+  max-height: 100vh;
 }
 
 @media (min-width: 1200px) {
   .container--layout {
-    padding-top: 120px;
+    padding-top: 0;
+  }
+
+  .row--authed {
+    padding-top: 150px;
   }
 }

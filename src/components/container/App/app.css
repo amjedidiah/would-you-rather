@@ -1,3 +1,27 @@
+:root {
+  --johndoe: #ef25ff;
+  --sarahedo: #5ceefd;
+  --tylermcginnis: #741cfe;
+  --white: #ffffff;
+  --light: #f1e8ff;
+}
+
+.bg-light--custom {
+  background: var(--light);
+}
+
+.bg-johndoe {
+  background: var(--johndoe);
+}
+
+.bg-sarahedo {
+  background: var(--sarahedo);
+}
+
+.bg-tylermcginnis {
+  background: var(--tylermcginnis);
+}
+
 .img-holder {
   overflow: hidden;
 }
@@ -8,6 +32,14 @@ button.buttonnavbar-toggler:hover {
   border: none !important;
 }
 
-.text-primary--custom {
-  color: #741cfe;
+.text--tylermcginnis {
+  color: var(--tylermcginnis);
+}
+
+.text--sarahedo {
+  color: var(--sarahedo);
+}
+
+.text--johndoe {
+  color: var(--johndoe);
 }
