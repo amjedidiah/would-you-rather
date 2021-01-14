@@ -18,7 +18,7 @@ const navLinks = [
   {
     'text': 'new question',
     'to': '/add',
-    'icon': <FaPlus />,
+    'icon': <FaPlus color="#fff" />,
   },
 ];
 

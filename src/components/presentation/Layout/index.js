@@ -19,17 +19,20 @@ import './layout.css';
  *
  * @example
  * const authedUser = 'sarahedo'
- * return (<Layout authedUser={authedUser}><Login /></Layout>)
+ * const notFound = false
+ * return <Layout authedUser={authedUser} notFound={notFound}><Login /></Layout>
  */
-const Layout = ({authedUser, children}) => (
+const Layout = ({authedUser, children, notFound}) => (
   <div
     className="h-100 container--layout"
     style={{
-      backgroundImage: authedUser ?
-        `url(${authedLayout})` :
-        `url(${unauthedLayout})`,
+      backgroundImage:
+        authedUser || notFound ?
+          `url(${authedLayout})` :
+          `url(${unauthedLayout})`,
     }}
   >
+    {console.log(authedUser)}
     <Navbar authedUser={authedUser} />
     <div className="h-100 container px-4">
       <div
@@ -56,10 +59,15 @@ Layout.propTypes = {
    */
   authedUser: PropTypes.string,
   children: PropTypes.element,
+  /**
+   * Layout's notFound
+   */
+  notFound: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   authedUser: '',
+  notFound: false,
 };
 
 // Layout export

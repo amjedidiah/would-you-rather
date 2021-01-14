@@ -16,9 +16,6 @@
 
 #### 404
 
-- [ ] QuestionList
-  - [ ] QuestionItem
-
 #### LoginContainer
 
 - [ ] UserCard: shows ( _avatarURL_ and _name_)

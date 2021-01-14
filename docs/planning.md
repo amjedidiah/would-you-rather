@@ -2,9 +2,11 @@
 
 1. [Identify What Each View Should Look Like](#identify-what-each-view-should-look-like)
 2. [Break Each View Into a Hierarchy of Components](#break-each-view-into-a-hierarchy-of-components)
-3. [Determine What Events Happen in the App](#determine-what-events-happen-in-the-app)
-4. [Determine What Data Lives in the Store](#determine-what-data-lives-in-the-store)
-5. [Coding Stage](#coding-stage)
+3. [Code Each View](#code-each-view)
+4. [Check For Unused Code](#check-for-unused-code)
+5. [Determine What Events Happen in the App](#determine-what-events-happen-in-the-app)
+6. [Determine What Data Lives in the Store](#determine-what-data-lives-in-the-store)
+7. [Coding Stage](#coding-stage)
 
 ## Identify What Each View Should Look Like
 
@@ -17,6 +19,14 @@ Do this by:
 
 - drawing boxes around every component
 - arranging components into a hierarchy
+
+## Code Each View
+
+Code each view in pure HTML, CSS & Javascript
+
+## Check For Unused Code
+
+Check for unused code using guide in [this article](https://app.getpocket.com/read/2660858451)
 
 ## Determine What Events Happen in the App
 

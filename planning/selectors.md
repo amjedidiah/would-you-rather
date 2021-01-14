@@ -12,16 +12,6 @@
 
 - **_getAuthedUserID_** : returns authedUserID
 
-## 404
-
-1. Selectors
-
-   - **_getQuestionRecommendationIDs_**: returns three unanswered questions only if **_authedUserID_** exists
-
-2. Events
-   - If **_questionRecommendationIDs_**, pass down to QuestionList
-   - Gets the last visited URL to be able to go back to on buttonClick
-
 ## QuestionItem
 
 - **_getQuestion_**: returns question from _questionID_ ownProps

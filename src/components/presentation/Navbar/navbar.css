@@ -21,9 +21,11 @@ li.nav-item a.nav-link.nav-link--custom.active {
 
 .add {
   position: fixed;
-  right: 35px;
-  bottom: 35px;
-  font-size: 3rem;
+  right: 25px;
+  bottom: 25px;
+  font-size: 1.5rem;
+  padding: 5px 11px 8px;
+  z-index: 2;
 }
 
 @media (min-width: 576px) {

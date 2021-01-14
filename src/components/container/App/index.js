@@ -16,6 +16,7 @@ import {getLoading} from 'redux/selectors';
 
 // Style import
 import './app.css';
+import NotFound from 'components/presentation/NotFound';
 
 /**
  * App component
@@ -47,18 +48,21 @@ class App extends Component {
   render = () => {
     const {authedUser, loading} = this.props;
 
+    const notFound = true;
+
     return (
       <>
         <LoadingBar />
         {!loading && (
-          <Layout authedUser={authedUser}>
-            {authedUser ? (
-              <div className="col-12 col-xl offset-xl-3">
-                Would you rather
-              </div>
-            ) : (
-              <Login />
-            )}
+          <Layout authedUser={authedUser} notFound={notFound}>
+            {{true: <NotFound />}[notFound] ||
+              (authedUser ? (
+                <div className="col-12 col-xl offset-xl-3">
+                  Would you rather
+                </div>
+              ) : (
+                <Login />
+              ))}
           </Layout>
         )}
       </>

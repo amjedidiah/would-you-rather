@@ -1,6 +1,5 @@
 // Module imports
 import PropTypes from 'prop-types';
-import {IconContext} from 'react-icons';
 
 // Data imports
 import navLinks from './navLinks';
@@ -50,16 +49,15 @@ const Navbar = ({authedUser}) => (
                 ) : (
                   <>
                     <span className="d-none d-xl-block">{text}</span>
-                    <IconContext.Provider
-                      value={{
-                        color: 'var(--tylermcginnis)',
-                        className:
-                          'add shadow rounded-circle bg-white' +
-                          'p-2 btn btn-white d-xl-none',
-                      }}
+
+                    <button
+                      type="button"
+                      className="btn bg-tylermcginnis d-xl-none
+                      shadow rounded-circle add"
+                      aria-label="Add"
                     >
                       {icon}
-                    </IconContext.Provider>
+                    </button>
                   </>
                 )}
               </a>
