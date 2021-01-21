@@ -1,10 +1,10 @@
-# 404 View
+# NotFound View
 
 ## Mockup
 
-![Layout](../mockup/404.png)
+![Layout](../mockup/notFound.png)
 
-> Code to 404 can be found [here](https://codepen.io/saransh/pen/aezht)
+> Code to NotFound can be found [here](https://codepen.io/saransh/pen/aezht)
 
 ## Requirements
 
@@ -26,4 +26,4 @@
       - [x] Navbar
       - [x] UserCard
       - Children
-        - [x] 404
+        - [x] NotFound

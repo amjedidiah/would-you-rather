@@ -4,16 +4,16 @@
  * @param {action} action - Redux action
  * @return {questions} - returned questions state
  */
-const questions = (state = {}, action) => {
+const questions = (state = {active: '', all: {}}, action) => {
   /**
    * @type {id}
    */
-  const questionID = action && action.questionID;
+  const questionID = action?.questionID;
 
   /**
    * @type {string}
    */
-  const option = action && action.option;
+  const option = action?.option;
 
   /**
    * @type {option}
@@ -27,18 +27,22 @@ const questions = (state = {}, action) => {
 
   return (
     {
-      RECEIVE_QUESTIONS: {...state, ...action.questions},
+      RECEIVE_QUESTIONS: {...state, all: action.questions},
       SAVE_QUESTION: {
         ...state,
-        [questionID]: action.question,
+        all: {...state.all, [questionID]: action.question},
       },
       SAVE_QUESTION_ANSWER: {
         ...state,
-        [questionID]: {
-          ...state[questionID],
-          [option]: updatedOption,
+        all: {
+          ...state?.all,
+          [questionID]: {
+            ...state?.all[questionID],
+            [option]: updatedOption,
+          },
         },
       },
+      SET_ACTIVE_QUESTION: {...state, active: action.questionID},
     }[action.type] || state
   );
 };

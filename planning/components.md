@@ -14,18 +14,16 @@
 
 - [x] UserCard: display varies depending on if user is loggedIn
 
-#### 404
+#### NotFound
 
 #### LoginContainer
 
-- [ ] UserCard: shows ( _avatarURL_ and _name_)
+- [x] UserCard: shows ( _avatarURL_ and _name_)
 
 #### QuestionContainer
 
-- [ ] QuestionSwitch
-- [ ] QuestionList
-
-  - [ ] QuestionItem
+- [x] QuestionSwitch
+- [ ] QuestionItem
 
 #### QuestionDisplay
 
@@ -37,9 +35,9 @@
 
 #### UserContainer
 
-- [ ] UserCard: renders with different styling
+- [x] UserCard: renders with different styling
 - [ ] QuestionContainer
 
 #### Leaderboard
 
-- [ ] UserCard
+- [x] UserCard

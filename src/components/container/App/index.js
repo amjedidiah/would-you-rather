@@ -10,6 +10,7 @@ import {handleInitialData} from 'redux/actions/shared';
 // Component imports
 import Layout from 'components/presentation/Layout';
 import Login from 'components/container/Login';
+import QuestionContainer from 'components/container/QuestionContainer';
 
 // Selector imports
 import {getLoading} from 'redux/selectors';
@@ -48,7 +49,7 @@ class App extends Component {
   render = () => {
     const {authedUser, loading} = this.props;
 
-    const notFound = true;
+    const notFound = false;
 
     return (
       <>
@@ -58,7 +59,7 @@ class App extends Component {
             {{true: <NotFound />}[notFound] ||
               (authedUser ? (
                 <div className="col-12 col-xl offset-xl-3">
-                  Would you rather
+                  <QuestionContainer />
                 </div>
               ) : (
                 <Login />

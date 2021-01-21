@@ -1,6 +1,10 @@
 /**
  * @const {string}
  */
+export const SET_ACTIVE_QUESTION = 'SET_ACTIVE_QUESTION';
+/**
+ * @const {string}
+ */
 export const SET_AUTHED_USER = 'SET_AUTHED_USER';
 /**
  * @const {string}

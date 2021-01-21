@@ -1,0 +1,17 @@
+.question-item {
+  flex-wrap: wrap;
+}
+
+.question--user-container {
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .question-item {
+    flex-wrap: no-wrap;
+  }
+
+  .question--user-container {
+    flex-basis: unset;
+  }
+}

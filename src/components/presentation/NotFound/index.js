@@ -2,7 +2,7 @@
 import {FaChevronLeft, FaHome} from 'react-icons/fa';
 
 // Style import
-import './notfound.min.css';
+import './notFound.min.css';
 
 /**
  * NotFound component

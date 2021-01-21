@@ -72,7 +72,7 @@
 ]
 ```
 
-## 404
+## NotFound
 
 - lastVisited: from history
 

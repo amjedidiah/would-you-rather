@@ -8,24 +8,24 @@ const users = (state = {}, action) => {
   /**
    * @type {string}
    */
-  const option = action && action.option;
+  const option = action?.option;
 
   /**
    * @type {id}
    */
-  const userID = action && action.userID;
+  const userID = action?.userID;
 
   /**
    * @type {id}
    */
-  const questionID = action && action.questionID;
+  const questionID = action?.questionID;
 
   /**
    * @type {id[]}
    */
   const updatedQuestions = questionID ?
-    [...state[userID].questions, questionID] :
-    state[userID] && state[userID].questions;
+    [...(state[userID]?.questions || []), questionID] :
+    state[userID]?.questions;
 
   /**
    * @type {answer}
@@ -35,7 +35,7 @@ const users = (state = {}, action) => {
       ...state[userID].answers,
       [questionID]: option,
     } :
-    state[userID] && state[userID].answers;
+    state[userID]?.answers;
 
   return (
     {

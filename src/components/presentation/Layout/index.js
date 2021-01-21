@@ -32,7 +32,6 @@ const Layout = ({authedUser, children, notFound}) => (
           `url(${unauthedLayout})`,
     }}
   >
-    {console.log(authedUser)}
     <Navbar authedUser={authedUser} />
     <div className="h-100 container px-4">
       <div

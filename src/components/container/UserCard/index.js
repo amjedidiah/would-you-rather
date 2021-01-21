@@ -14,7 +14,12 @@ import {
 } from 'redux/selectors';
 
 // Style import
-import './usercard.css';
+import './userCard.css';
+
+// Media imports
+import leaf from './images/leaf.jpg';
+import snow from './images/snow.jpg';
+import tyler from './images/tyler.jpg';
 
 /**
  * UserCard component
@@ -38,6 +43,7 @@ import './usercard.css';
 const UserCard = (props) => {
   const {
     answeredQuestions,
+    authedUser,
     className,
     onSetAuthedUser,
     submittedQuestions,
@@ -48,6 +54,17 @@ const UserCard = (props) => {
   const {avatarURL, name} = user;
   const score = answeredQuestions + submittedQuestions;
 
+  const getImgName = () => {
+    const imgUrl = avatarURL.split('/');
+    const length = imgUrl.length;
+    const imgName = imgUrl[length - 1].substr(
+        0,
+        imgUrl[length - 1].indexOf('.'),
+    );
+
+    return {leaf, snow}[imgName] || tyler;
+  };
+
   return (
     <div
       className={`col-12 ${className}`}
@@ -55,7 +72,7 @@ const UserCard = (props) => {
     >
       <div className="user-info">
         <div className="rounded-circle img-holder">
-          <img src={avatarURL} className="img-fluid" alt={userID} />
+          <img src={getImgName()} className="img-fluid" alt={userID} />
         </div>
         <div>
           <p className="card-title">{name}</p>
@@ -77,15 +94,17 @@ const UserCard = (props) => {
           <p className={`text--${userID} display-4 fw-bold`}>{score}</p>
           <p className=" text-uppercase question-count">score</p>
         </div>
-        <button
-          className="btn btn-danger w-100 rounded-pill"
-          onClick={unsetAuthedUser}
-        >
-          <span className="d-none d-xl-block">Logout</span>
-          <span className="d-xl-none">
-            <FaPowerOff />
-          </span>
-        </button>
+        {authedUser === userID && (
+          <button
+            className="btn btn-danger w-100 rounded-pill"
+            onClick={unsetAuthedUser}
+          >
+            <span className="d-none d-xl-block">Logout</span>
+            <span className="d-xl-none">
+              <FaPowerOff />
+            </span>
+          </button>
+        )}
       </div>
     </div>
   );
@@ -93,6 +112,7 @@ const UserCard = (props) => {
 
 UserCard.propTypes = {
   answeredQuestions: PropTypes.number,
+  authedUser: PropTypes.string,
   /**
    * UserCard className
    */
@@ -112,6 +132,7 @@ UserCard.propTypes = {
 
 UserCard.defaultProps = {
   answeredQuestions: 0,
+  authedUser: '',
   className: '',
   onSetAuthedUser: null,
   submittedQuestions: 0,
@@ -126,8 +147,9 @@ UserCard.defaultProps = {
  * @param {{userID: id}} ownProps
  * @return {{answeredQuestions: number, submittedQuestions: number, user: user}}
  */
-const mapStateToProps = ({users}, {userID}) => ({
+const mapStateToProps = ({authedUser, users}, {userID}) => ({
   answeredQuestions: getAnsweredQuestionsCount(users, userID),
+  authedUser,
   submittedQuestions: getSubmittedQuestionsCount(users, userID),
   user: getUser(userID, users),
 });
