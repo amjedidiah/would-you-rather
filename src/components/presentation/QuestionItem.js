@@ -6,13 +6,7 @@ import PropTypes from 'prop-types';
 import UserCard from 'components/container/UserCard';
 
 // Selector import
-import {getQuestion} from 'redux/selectors';
-
-// Action creator imports
-import {setActiveQuestion} from 'redux/actions/questions';
-
-// Style import
-import './questionItem.css';
+import {getIfAnswered, getQuestion} from 'redux/selectors';
 
 /**
  * QuestionItem component
@@ -25,11 +19,9 @@ import './questionItem.css';
  * return <QuestionItem  questionID={questionID} />
  */
 const QuestionItem = (props) => (
-  <div
-    className="shadow my-3 p-3 rounded d-flex
-  flex-sm question-item align-items-center bg-white"
-  >
-    <div className="question--user-container mb-2 mb-md-0">
+  <div className="shadow my-3 p-3 rounded d-flex
+  question-item align-items-center bg-white flex-wrap">
+    <div className="question--user-container just-width mb-3 mb-md-0 mx-auto">
       <UserCard
         className="card--user-question"
         userID={props.question?.author}
@@ -37,30 +29,31 @@ const QuestionItem = (props) => (
     </div>
     <div className="question-details flex-grow-1 ms-3 text-center">
       <h5>Would You Rather?</h5>
-      <p>...{props.question?.optionOne?.text}...</p>
-      <button
-        className="btn btn-link mt-2"
-        onClick={() => props.setActiveQuestion(props.question?.id)}
-      >
-        View
+      <p>
+        {props.question?.optionOne?.text}
+        <br />
+        or...
+      </p>
+      <button className="btn btn-link mt-2">
+        {props.ifAnswered ? 'View results' : 'Answer Poll'}
       </button>
     </div>
   </div>
 );
 
 QuestionItem.propTypes = {
+  ifAnswered: PropTypes.bool,
   question: PropTypes.object,
   /**
    * QuestionItem questionID
    */
   questionID: PropTypes.string.isRequired,
-  setActiveQuestion: PropTypes.func,
 };
 
 QuestionItem.defaultProps = {
+  ifAnswered: false,
   question: {},
   questionID: '',
-  setActiveQuestion: () => {},
 };
 
 /**
@@ -69,9 +62,10 @@ QuestionItem.defaultProps = {
  * @param {{questionID: id}} ownProps
  * @return {{question: question}}
  */
-const mapStateToProps = ({questions}, {questionID}) => ({
+const mapStateToProps = ({authedUser, questions}, {questionID}) => ({
+  ifAnswered: getIfAnswered(authedUser, questionID, questions),
   question: getQuestion(questionID, questions),
 });
 
 // QuestionItem export
-export default connect(mapStateToProps, {setActiveQuestion})(QuestionItem);
+export default connect(mapStateToProps)(QuestionItem);

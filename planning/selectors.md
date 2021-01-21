@@ -25,18 +25,10 @@
 - **_getQuestionIDs_**: returns all question IDs
 - **_getUserQuestionIDs_**: returns all user question IDs
 
-## QuestionAnswerForm
-
-- **_getAuthedUserID_** : returns authedUserID
 
 ## QuestionForm
 
 - **_getAuthedUserID_** : returns authedUserID
-
-## QuestionResult
-
-- **_getQuestionOwnerAvatar_**
-- **_getQuestionVotes_**
 
 ## Leaderboard
 

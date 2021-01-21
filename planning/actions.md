@@ -9,7 +9,7 @@
 
 ## QuestionAnswerForm
 
-- handleSaveAnswer
+- handleSaveQuestionAnswer
 
 ## QuestionForm
 

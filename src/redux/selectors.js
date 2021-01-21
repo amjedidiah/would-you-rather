@@ -8,13 +8,30 @@ export const getAnsweredQuestionsCount = (users, userID) =>
   Object.keys((users[userID] && users[userID].answers) || {}).length;
 
 /**
+ * Gets if question is answered by authed user
+ * @param {id} authedUser - authed user from state
+ * @param {id} questionID - question id of a particular question
+ * @param {questions} questions - questions from state
+ * @param {question} q - question object
+ * @return {boolean}
+ */
+export const getIfAnswered = (authedUser, questionID, questions, q) => {
+  const question = q || getQuestion(questionID, questions);
+
+  return (
+    (question?.optionOne?.votes || []).includes(authedUser) ||
+    (question?.optionTwo?.votes || []).includes(authedUser)
+  );
+};
+
+/**
  * Get Laoding status
  * @param {questions} questions - questions from state
  * @param {users} users - users from state
  * @return {boolean}
  */
 export const getLoading = (questions, users) =>
-  Object.keys(questions?.all) < 1 && Object.keys(users) < 1;
+  Object.keys(questions) < 1 && Object.keys(users) < 1;
 
 /**
  * Get question
@@ -22,8 +39,7 @@ export const getLoading = (questions, users) =>
  * @param {questions} questions - questions from state
  * @return {question}
  */
-export const getQuestion = (questionID, questions) =>
-  (questions?.all)[questionID];
+export const getQuestion = (questionID, questions) => questions[questionID];
 
 /**
  * Get question IDs
@@ -39,22 +55,19 @@ export const getQuestionIDs = (
     authorID,
     authedUser,
 ) => {
-  const filterFunc = ({optionOne, optionTwo}) =>
+  const filterFunc = (q) =>
     activeCategory === 'answered' ?
-      (optionOne?.votes).includes(authedUser) ||
-        (optionTwo?.votes).includes(authedUser) :
-      !(optionOne?.votes).includes(authedUser) &&
-        !(optionTwo?.votes).includes(authedUser);
+      getIfAnswered(authedUser, null, null, q) :
+      !getIfAnswered(authedUser, null, null, q);
 
   return authorID ?
-    Object.entries(questions?.all)
+    Object.entries(questions)
         .map((i) => i[1])
         .filter(
-            (question) =>
-              filterFunc(question) && question?.author === authorID,
+            (question) => filterFunc(question) && question?.author === authorID,
         )
         .map((i) => i?.id) :
-    Object.entries(questions?.all)
+    Object.entries(questions)
         .map((i) => i[1])
         .filter((question) => filterFunc(question))
         .map((i) => i?.id);
@@ -67,7 +80,7 @@ export const getQuestionIDs = (
  * @return {number}
  */
 export const getSubmittedQuestionsCount = (users, userID) =>
-  ((users[userID]?.questions) || []).length;
+  (users[userID]?.questions || []).length;
 
 /**
  * Get user

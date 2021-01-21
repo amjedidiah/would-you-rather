@@ -35,8 +35,8 @@
       - [x] Navbar
       - [x] UserCard
       - Children
-        - [ ] QuestionDisplay
-          - [ ] QuestionAnswerForm
+        - [x] QuestionDisplay
+          - [x] QuestionAnswerForm
 
 ### Answered Poll
 
@@ -50,4 +50,5 @@
       - [x] Navbar
       - [x] UserCard
       - Children
-        - [ ] QuestionResult
+        - [x] QuestionDisplay
+          - [x] QuestionResult

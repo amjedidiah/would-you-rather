@@ -49,8 +49,8 @@ const UserCard = (props) => {
     submittedQuestions,
     unsetAuthedUser,
     user,
-    userID,
   } = props;
+  const userID = props.userID || authedUser;
   const {avatarURL, name} = user;
   const score = answeredQuestions + submittedQuestions;
 
@@ -148,10 +148,10 @@ UserCard.defaultProps = {
  * @return {{answeredQuestions: number, submittedQuestions: number, user: user}}
  */
 const mapStateToProps = ({authedUser, users}, {userID}) => ({
-  answeredQuestions: getAnsweredQuestionsCount(users, userID),
+  answeredQuestions: getAnsweredQuestionsCount(users, userID || authedUser),
   authedUser,
-  submittedQuestions: getSubmittedQuestionsCount(users, userID),
-  user: getUser(userID, users),
+  submittedQuestions: getSubmittedQuestionsCount(users, userID || authedUser),
+  user: getUser(userID || authedUser, users),
 });
 
 // UserCard export

@@ -4,7 +4,7 @@
  * @param {action} action - Redux action
  * @return {questions} - returned questions state
  */
-const questions = (state = {active: '', all: {}}, action) => {
+const questions = (state = {}, action) => {
   /**
    * @type {id}
    */
@@ -18,31 +18,46 @@ const questions = (state = {active: '', all: {}}, action) => {
   /**
    * @type {option}
    */
-  const updatedOption = option ?
+  const updatedOptionAdd = option ?
     {
       ...state[questionID][option],
       votes: [...state[questionID][option].votes, action.userID],
     } :
     state[questionID] && state[questionID][option];
 
+  /**
+   * @type {option}
+   */
+  const updatedOptionRemove = option ?
+    {
+      ...state[questionID][option],
+      votes: (state[questionID][option].votes || []).filter(
+          (i) => i !== action.userID,
+      ),
+    } :
+    state[questionID] && state[questionID][option];
+
   return (
     {
-      RECEIVE_QUESTIONS: {...state, all: action.questions},
+      RECEIVE_QUESTIONS: action?.questions,
       SAVE_QUESTION: {
         ...state,
-        all: {...state.all, [questionID]: action.question},
+        [questionID]: action?.question,
       },
       SAVE_QUESTION_ANSWER: {
         ...state,
-        all: {
-          ...state?.all,
-          [questionID]: {
-            ...state?.all[questionID],
-            [option]: updatedOption,
-          },
+        [questionID]: {
+          ...state[questionID],
+          [option]: updatedOptionAdd,
         },
       },
-      SET_ACTIVE_QUESTION: {...state, active: action.questionID},
+      REMOVE_QUESTION_ANSWER: {
+        ...state,
+        [questionID]: {
+          ...state[questionID],
+          [option]: updatedOptionRemove,
+        },
+      },
     }[action.type] || state
   );
 };

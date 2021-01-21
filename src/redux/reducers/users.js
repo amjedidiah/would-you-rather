@@ -30,10 +30,20 @@ const users = (state = {}, action) => {
   /**
    * @type {answer}
    */
-  const updatedAnswers = userID ?
+  const updatedAnswersAdd = userID ?
     {
       ...state[userID].answers,
       [questionID]: option,
+    } :
+    state[userID]?.answers;
+
+  /**
+   * @type {answer}
+   */
+  const updatedAnswersRemove = userID ?
+    {
+      ...state[userID].answers,
+      [questionID]: undefined,
     } :
     state[userID]?.answers;
 
@@ -47,11 +57,18 @@ const users = (state = {}, action) => {
           questions: updatedQuestions,
         },
       },
+      REMOVE_QUESTION_ANSWER: {
+        ...state,
+        [userID]: {
+          ...state[userID],
+          answers: updatedAnswersRemove,
+        },
+      },
       SAVE_QUESTION_ANSWER: {
         ...state,
         [userID]: {
           ...state[userID],
-          answers: updatedAnswers,
+          answers: updatedAnswersAdd,
         },
       },
     }[action.type] || state

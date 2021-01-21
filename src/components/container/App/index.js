@@ -10,7 +10,8 @@ import {handleInitialData} from 'redux/actions/shared';
 // Component imports
 import Layout from 'components/presentation/Layout';
 import Login from 'components/container/Login';
-import QuestionContainer from 'components/container/QuestionContainer';
+import QuestionDisplay from 'components/presentation/QuestionDisplay';
+
 
 // Selector imports
 import {getLoading} from 'redux/selectors';
@@ -59,7 +60,8 @@ class App extends Component {
             {{true: <NotFound />}[notFound] ||
               (authedUser ? (
                 <div className="col-12 col-xl offset-xl-3">
-                  <QuestionContainer />
+                  <QuestionDisplay questionID="6ni6ok3ym7mf1p33lnez" />
+                  {/* <QuestionContainer /> */}
                 </div>
               ) : (
                 <Login />

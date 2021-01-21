@@ -197,6 +197,25 @@
 }
 
 /*
+* QUESTION DISPLAY
+*/
+.card.card--question-display {
+  display: flex-row !important;
+  flex-direction: row;
+}
+.card--question-display .img-holder {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+}
+.card--question-display img {
+  margin: 0 auto;
+}
+.card--question-display .user-info--extra {
+  display: none;
+}
+
+/*
 * MEDIA QUERY
 */
 @media (min-width: 576px) {

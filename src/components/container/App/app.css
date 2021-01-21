@@ -43,3 +43,12 @@ button.buttonnavbar-toggler:hover {
 .text--johndoe {
   color: var(--johndoe);
 }
+
+.text--sarahedo,
+.text-white {
+  text-shadow: 0.5px 0.5px #000;
+}
+
+.pointer {
+  cursor: pointer;
+}

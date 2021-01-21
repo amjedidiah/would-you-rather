@@ -23,20 +23,19 @@
 #### QuestionContainer
 
 - [x] QuestionSwitch
-- [ ] QuestionItem
+- [x] QuestionItem
 
 #### QuestionDisplay
 
-- [ ] QuestionAnswerForm
+- [x] QuestionAnswerForm
+- [x]  QuestionResult
 
 #### QuestionForm
-
-#### QuestionResult
 
 #### UserContainer
 
 - [x] UserCard: renders with different styling
-- [ ] QuestionContainer
+- [x] QuestionContainer
 
 #### Leaderboard
 

@@ -5,7 +5,11 @@ li.nav-item .nav-link.nav-link--switch {
   text-transform: uppercase;
 }
 
-li.nav-item .nav-link.nav-link--switch:hover,
+li.nav-item .nav-link.nav-link--switch:hover {
+  background: var(--white);
+  color: var(--tylermcginnis);
+}
+
 li.nav-item .nav-link.nav-link--switch.active {
   color: #fff;
   background: var(--tylermcginnis);

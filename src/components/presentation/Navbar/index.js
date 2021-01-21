@@ -67,7 +67,7 @@ const Navbar = ({authedUser}) => (
         {authedUser && (
           <ul className="navbar-nav ms-auto">
             <li className="nav-item text-capitalize font-weight-bold">
-              <UserCard className="card--navbar d-flex" userID={authedUser} />
+              <UserCard className="card--navbar d-flex" />
             </li>
           </ul>
         )}

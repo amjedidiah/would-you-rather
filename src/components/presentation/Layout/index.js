@@ -43,7 +43,6 @@ const Layout = ({authedUser, children, notFound}) => (
           <UserCard
             className={`card--authed col-xl-2
             d-none d-xl-block position-fixed shadow py-3 px-4`}
-            userID={authedUser}
           />
         )}
         {children}
