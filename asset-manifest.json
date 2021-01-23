@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/amjedidiah.github.io/would-you-rather/static/css/main.8bb275fb.chunk.css",
+    "main.js": "/amjedidiah.github.io/would-you-rather/static/js/main.9d638853.chunk.js",
+    "main.js.map": "/amjedidiah.github.io/would-you-rather/static/js/main.9d638853.chunk.js.map",
+    "runtime-main.js": "/amjedidiah.github.io/would-you-rather/static/js/runtime-main.74153dc3.js",
+    "runtime-main.js.map": "/amjedidiah.github.io/would-you-rather/static/js/runtime-main.74153dc3.js.map",
+    "static/js/2.3297b8aa.chunk.js": "/amjedidiah.github.io/would-you-rather/static/js/2.3297b8aa.chunk.js",
+    "static/js/2.3297b8aa.chunk.js.map": "/amjedidiah.github.io/would-you-rather/static/js/2.3297b8aa.chunk.js.map",
+    "static/js/3.7d5e0625.chunk.js": "/amjedidiah.github.io/would-you-rather/static/js/3.7d5e0625.chunk.js",
+    "static/js/3.7d5e0625.chunk.js.map": "/amjedidiah.github.io/would-you-rather/static/js/3.7d5e0625.chunk.js.map",
+    "index.html": "/amjedidiah.github.io/would-you-rather/index.html",
+    "service-worker.js": "/amjedidiah.github.io/would-you-rather/service-worker.js",
+    "service-worker.js.map": "/amjedidiah.github.io/would-you-rather/service-worker.js.map",
+    "static/css/main.8bb275fb.chunk.css.map": "/amjedidiah.github.io/would-you-rather/static/css/main.8bb275fb.chunk.css.map",
+    "static/js/2.3297b8aa.chunk.js.LICENSE.txt": "/amjedidiah.github.io/would-you-rather/static/js/2.3297b8aa.chunk.js.LICENSE.txt",
+    "static/media/authed-layout.38ac6be1.jpg": "/amjedidiah.github.io/would-you-rather/static/media/authed-layout.38ac6be1.jpg",
+    "static/media/leaf.90998857.jpg": "/amjedidiah.github.io/would-you-rather/static/media/leaf.90998857.jpg",
+    "static/media/snow.279b64a1.jpg": "/amjedidiah.github.io/would-you-rather/static/media/snow.279b64a1.jpg",
+    "static/media/tyler.b1b3df1e.jpg": "/amjedidiah.github.io/would-you-rather/static/media/tyler.b1b3df1e.jpg",
+    "static/media/unauthed-layout.9984465c.jpg": "/amjedidiah.github.io/would-you-rather/static/media/unauthed-layout.9984465c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74153dc3.js",
+    "static/js/2.3297b8aa.chunk.js",
+    "static/css/main.8bb275fb.chunk.css",
+    "static/js/main.9d638853.chunk.js"
+  ]
+}
