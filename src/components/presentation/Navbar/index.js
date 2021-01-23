@@ -1,5 +1,6 @@
 // Module imports
 import PropTypes from 'prop-types';
+import {NavLink, Link} from 'react-router-dom';
 
 // Data imports
 import navLinks from './navLinks';
@@ -22,13 +23,13 @@ import './navbar.css';
 const Navbar = ({authedUser}) => (
   <nav className="navbar navbar-expand navbar-light fixed-top" id="navbar">
     <div className="container px-xl-4">
-      <a
+      <Link
         className="navbar-brand fw-bolder
         text-white fs-2 me-xl-5 my-xl-3"
-        href="/"
+        to="/"
       >
         wyr.
-      </a>
+      </Link>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ms-auto ms-xl-5 my-3">
           {navLinks.map(({icon, text, to}) => (
@@ -36,10 +37,11 @@ const Navbar = ({authedUser}) => (
               key={text}
               className="nav-item text-capitalize fw-bold"
             >
-              <a
+              <NavLink
                 className="nav-link nav-link--custom mx-sm-3"
                 aria-current="page"
-                href={to}
+                to={to}
+                exact={to === '/'}
               >
                 {text !== 'new question' ? (
                   <div>
@@ -48,19 +50,21 @@ const Navbar = ({authedUser}) => (
                   </div>
                 ) : (
                   <>
+                    <span className="d-xl-none fs-1">{icon}</span>
                     <span className="d-none d-xl-block">{text}</span>
 
-                    <button
+                    {/* <button
                       type="button"
                       className="btn bg-tylermcginnis d-xl-none
                       shadow rounded-circle add"
                       aria-label="Add"
+                      typpe="button"
                     >
                       {icon}
-                    </button>
+                    </button> */}
                   </>
                 )}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

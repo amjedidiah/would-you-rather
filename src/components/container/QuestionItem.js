@@ -7,6 +7,7 @@ import UserCard from 'components/container/UserCard';
 
 // Selector import
 import {getIfAnswered, getQuestion} from 'redux/selectors';
+import {Link} from 'react-router-dom';
 
 /**
  * QuestionItem component
@@ -19,8 +20,10 @@ import {getIfAnswered, getQuestion} from 'redux/selectors';
  * return <QuestionItem  questionID={questionID} />
  */
 const QuestionItem = (props) => (
-  <div className="shadow my-3 p-3 rounded d-flex
-  question-item align-items-center bg-white flex-wrap">
+  <div
+    className="shadow my-3 p-3 rounded d-flex
+  question-item align-items-center bg-white flex-wrap"
+  >
     <div className="question--user-container just-width mb-3 mb-md-0 mx-auto">
       <UserCard
         className="card--user-question"
@@ -34,9 +37,12 @@ const QuestionItem = (props) => (
         <br />
         or...
       </p>
-      <button className="btn btn-link mt-2">
+      <Link
+        to={`/questions/${props.question?.id}`}
+        className="btn btn-link mt-2"
+      >
         {props.ifAnswered ? 'View results' : 'Answer Poll'}
-      </button>
+      </Link>
     </div>
   </div>
 );

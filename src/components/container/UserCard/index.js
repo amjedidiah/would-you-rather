@@ -55,7 +55,7 @@ const UserCard = (props) => {
   const score = answeredQuestions + submittedQuestions;
 
   const getImgName = () => {
-    const imgUrl = avatarURL.split('/');
+    const imgUrl = (avatarURL || '').split('/');
     const length = imgUrl.length;
     const imgName = imgUrl[length - 1].substr(
         0,

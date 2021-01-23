@@ -86,7 +86,7 @@ class QuestionContainer extends Component {
    * @return {object} - The UI DOM object
    */
   render = () => (
-    <div className="py-5 py-xl-0">
+    <div>
       <QuestionSwitch
         categories={categories}
         active={this.state.activeCategory}

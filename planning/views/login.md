@@ -10,7 +10,6 @@
 
 - route is `/login`
 - all of it is shown on app startup, after loading screen and | or bar
-- only form is shown should any page be visited by typing in the address in the address bar, after loading screen and | or bar
 - on successful login(choosing a user)
   - on app startup: load homepage
   - on visiting a page: load that page

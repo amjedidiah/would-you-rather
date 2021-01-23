@@ -18,7 +18,7 @@
   - the number of people who voted for that option
   - the percentage of people who voted for that option
   - the option selected by the logged in user clearly marked
-- asks the user to sign in and redirects to `/404` if that poll does not exist
+- asks the user to sign in and redirects to notfound if that poll does not exist
 - upon voting in a poll, all of the information of the answered poll is displayed
 
 ## Components

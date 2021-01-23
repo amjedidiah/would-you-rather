@@ -60,7 +60,7 @@ export const getQuestionIDs = (
       getIfAnswered(authedUser, null, null, q) :
       !getIfAnswered(authedUser, null, null, q);
 
-  return authorID ?
+  return (authorID ?
     Object.entries(questions)
         .map((i) => i[1])
         .filter(
@@ -70,7 +70,8 @@ export const getQuestionIDs = (
     Object.entries(questions)
         .map((i) => i[1])
         .filter((question) => filterFunc(question))
-        .map((i) => i?.id);
+        .map((i) => i?.id)
+  ).reverse();
 };
 
 /**
@@ -96,3 +97,18 @@ export const getUser = (userID, users) => users[userID];
  * @return {id[]}
  */
 export const getUserIDs = (users) => Object.keys(users);
+
+/**
+ * Get userIDs
+ * @param {users} users - users from state
+ * @return {id[]}
+ */
+export const getSortedUserIDs = (users) =>
+  Object.values(users)
+      .sort(
+          (a, b) =>
+            Object.keys(b.answers).length +
+        b.questions.length -
+        (Object.keys(a.answers).length + a.questions.length),
+      )
+      .map(({id}) => id);

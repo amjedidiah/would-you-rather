@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 // Action creator imports
 import {handleSaveQuestion} from 'redux/actions/questions';
+import {withRouter} from 'react-router-dom';
 
 /**
  * QuestionForm component
@@ -23,12 +24,14 @@ class QuestionForm extends Component {
   static propTypes = {
     authedUser: PropTypes.string,
     handleSaveQuestion: PropTypes.func,
-  }
+    history: PropTypes.object,
+  };
 
   static defaultProps = {
     authedUser: '',
     handleSaveQuestion: () => {},
-  }
+    history: {},
+  };
 
   /**
    * Renders QuestionForm component
@@ -36,18 +39,18 @@ class QuestionForm extends Component {
    */
   render = () => {
     const {optionOneText, optionTwoText} = this.state;
-    const {authedUser} = this.props;
+    const {authedUser, history} = this.props;
 
     return (
       <div>
         <h2>Create New Question</h2>
         <p className="text-muted">Complete the question</p>
-        <p className="lead">Would you rather...</p>
-        <form className="form">
-          <div className="mb-3">
+        <p className="lead mt-4 mb-2">Would you rather...</p>
+        <form className="form w-50">
+          <div className="my-3">
             <input
               type="text"
-              className="form-control"
+              className="form-control form-control--custom"
               placeholder="Enter option one text here..."
               value={optionOneText}
               onChange={({target}) =>
@@ -57,10 +60,10 @@ class QuestionForm extends Component {
             />
           </div>
           <p className="text-center fw-bold">OR</p>
-          <div className="mb-3">
+          <div className="my-3">
             <input
               type="text"
-              className="form-control"
+              className="form-control form-control--custom"
               placeholder="Enter option one text here..."
               value={optionTwoText}
               onChange={({target}) =>
@@ -71,14 +74,18 @@ class QuestionForm extends Component {
           </div>
 
           <button
-            className={`btn bg-${authedUser} text-white w-100 rounded-pill`}
+            className={`btn bg-${authedUser}
+            fw-bold px-3 py-1 my-2 rounded-pill text-white`}
             onClick={() =>
-              this.props.handleSaveQuestion({
-                author: authedUser,
-                optionOneText,
-                optionTwoText,
-              })
-            } type="button"
+              this.props
+                  .handleSaveQuestion({
+                    author: authedUser,
+                    optionOneText,
+                    optionTwoText,
+                  })
+                  .then(() => history.push('/'))
+            }
+            type="button"
           >
             Submit
           </button>
@@ -95,6 +102,7 @@ class QuestionForm extends Component {
  */
 const mapStateToProps = ({authedUser}) => ({authedUser});
 
-
 // QuestionForm export
-export default connect(mapStateToProps, {handleSaveQuestion})(QuestionForm);
+export default withRouter(
+    connect(mapStateToProps, {handleSaveQuestion})(QuestionForm),
+);

@@ -1,5 +1,6 @@
 // Module imports
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 // Style import
 import './questionSwitch.css';
@@ -20,19 +21,28 @@ import './questionSwitch.css';
  *          onSetActiveCategory={setActiveCategory}
  *          />
  */
-const QuestionSwitch = ({active, categories, onSetActiveCategory}) => (
+const QuestionSwitch = ({
+  active,
+  categories,
+  onSetActiveCategory,
+}) => (
   <ul className="nav nav-pills nav-fill">
     {categories.map((category) => (
-      <li key={category} className="nav-item"
-        onClick={() => onSetActiveCategory(category)}>
-        <a
+      <li
+        key={category}
+        className="nav-item"
+        onClick={() => onSetActiveCategory(category)}
+      >
+        <Link
           className={`nav-link ${
             active === category && 'active'
           } nav-link--switch`}
-          href="/#"
+          to={(location) => ({
+            pathname: location.pathname,
+          })}
         >
           {category}
-        </a>
+        </Link>
       </li>
     ))}
   </ul>

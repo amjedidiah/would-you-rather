@@ -19,33 +19,40 @@ import './layout.css';
  *
  * @example
  * const authedUser = 'sarahedo'
- * const notFound = false
  * return <Layout authedUser={authedUser} notFound={notFound}><Login /></Layout>
  */
-const Layout = ({authedUser, children, notFound}) => (
+const Layout = ({authedUser, children, location}) => (
   <div
-    className="h-100 container--layout"
+    className={`${!authedUser && 'h-100'} container--layout`}
     style={{
       backgroundImage:
-        authedUser || notFound ?
+        authedUser || location?.state?.isQuestionNotFound ?
           `url(${authedLayout})` :
           `url(${unauthedLayout})`,
     }}
   >
     <Navbar authedUser={authedUser} />
-    <div className="h-100 container px-4">
+    <div className={`${!authedUser && 'h-100'} container px-4`}>
       <div
         className={`row ${
           authedUser ? 'row--authed' : 'h-100 align-items-center'
         }`}
       >
-        {authedUser && (
+        {authedUser && !location?.state?.isQuestionNotFound && (
           <UserCard
             className={`card--authed col-xl-2
             d-none d-xl-block position-fixed shadow py-3 px-4`}
           />
         )}
-        {children}
+        <div
+          className={
+            authedUser &&
+            !location?.state?.isQuestionNotFound ?
+            `col-12 col-xl offset-xl-3 mt-5 py-5 py-xl-0` : ''
+          }
+        >
+          {children}
+        </div>
       </div>
     </div>
   </div>
@@ -57,15 +64,11 @@ Layout.propTypes = {
    */
   authedUser: PropTypes.string,
   children: PropTypes.element,
-  /**
-   * Layout's notFound
-   */
-  notFound: PropTypes.bool,
+  location: PropTypes.object,
 };
 
 Layout.defaultProps = {
   authedUser: '',
-  notFound: false,
 };
 
 // Layout export

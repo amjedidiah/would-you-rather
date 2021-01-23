@@ -7,7 +7,7 @@ import {FaHome, FaPlus, FaPoll} from 'react-icons/fa';
 const navLinks = [
   {
     'text': 'home',
-    'to': '/home',
+    'to': '/',
     'icon': <FaHome />,
   },
   {

@@ -219,7 +219,7 @@
 * MEDIA QUERY
 */
 @media (min-width: 576px) {
-  card--leaderboard {
+  .card--leaderboard {
     flex-direction: row;
   }
 

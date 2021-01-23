@@ -7,19 +7,14 @@ import LoadingBar from 'react-redux-loading';
 // Action creator imports
 import {handleInitialData} from 'redux/actions/shared';
 
-// Component imports
-import Layout from 'components/presentation/Layout';
-import Login from 'components/container/Login';
-import QuestionDisplay from 'components/container/QuestionDisplay';
-
+// Routes import
+import Routes from 'routes';
 
 // Selector imports
 import {getLoading} from 'redux/selectors';
 
 // Style import
 import './app.css';
-import NotFound from 'components/presentation/NotFound';
-import QuestionForm from 'components/controlled/QuestionForm';
 
 /**
  * App component
@@ -33,7 +28,6 @@ class App extends Component {
    * App propTypes
    */
   static propTypes = {
-    authedUser: PropTypes.string,
     handleInitialData: PropTypes.func,
     loading: PropTypes.bool,
   };
@@ -48,39 +42,20 @@ class App extends Component {
    * Renders the App UI
    * @return {object} - The UI DOM object
    */
-  render = () => {
-    const {authedUser, loading} = this.props;
-
-    const notFound = false;
-
-    return (
-      <>
-        <LoadingBar />
-        {!loading && (
-          <Layout authedUser={authedUser} notFound={notFound}>
-            {{true: <NotFound />}[notFound] ||
-              (authedUser ? (
-                <div className="col-12 col-xl offset-xl-3">
-                  <QuestionForm />
-                  {/* <QuestionContainer /> */}
-                </div>
-              ) : (
-                <Login />
-              ))}
-          </Layout>
-        )}
-      </>
-    );
-  };
+  render = () => (
+    <>
+      <LoadingBar />
+      {!this.props.loading && <Routes />}
+    </>
+  );
 }
 
 /**
  * Maps state to App component props
  * @param {state} state
- * @return {{authedUser: string, loading: boolean}}
+ * @return {{loading: boolean}}
  */
-const mapStateToProps = ({authedUser, questions, users}) => ({
-  authedUser,
+const mapStateToProps = ({questions, users}) => ({
   loading: getLoading(questions, users),
 });
 
