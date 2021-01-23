@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 // Component imports
 import UserCard from 'components/container/UserCard';
 import QuestionAnswerForm from './QuestionAnswerForm';
-import QuestionResult from './QuestionResult';
+import QuestionResult from '../presentation/QuestionResult';
 
 // Selector imports
 import {getIfAnswered, getQuestion} from 'redux/selectors';

@@ -10,7 +10,7 @@ import {handleInitialData} from 'redux/actions/shared';
 // Component imports
 import Layout from 'components/presentation/Layout';
 import Login from 'components/container/Login';
-import QuestionDisplay from 'components/presentation/QuestionDisplay';
+import QuestionDisplay from 'components/container/QuestionDisplay';
 
 
 // Selector imports
@@ -19,6 +19,7 @@ import {getLoading} from 'redux/selectors';
 // Style import
 import './app.css';
 import NotFound from 'components/presentation/NotFound';
+import QuestionForm from 'components/controlled/QuestionForm';
 
 /**
  * App component
@@ -60,7 +61,7 @@ class App extends Component {
             {{true: <NotFound />}[notFound] ||
               (authedUser ? (
                 <div className="col-12 col-xl offset-xl-3">
-                  <QuestionDisplay questionID="6ni6ok3ym7mf1p33lnez" />
+                  <QuestionForm />
                   {/* <QuestionContainer /> */}
                 </div>
               ) : (

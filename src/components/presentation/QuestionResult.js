@@ -39,7 +39,7 @@ const QuestionResult = ({authedUser, question}) => {
             {ifMyOption && (
               <span
                 className={`shadow bg-white text--${authedUser}
-              py-2 px-3 position-absolute rounded-circle font-weight-bolder`}
+              py-2 px-3 position-absolute rounded-circle fw-bolder`}
                 style={{right: '-10px', top: '-30px'}}
               >
                 Your
@@ -60,7 +60,7 @@ const QuestionResult = ({authedUser, question}) => {
                 {`${percentage}%`}
               </div>
             </div>
-            <p className="font-weight-bolder x-large">
+            <p className="fw-bolder x-large">
               {`${votesCount} out of ${totalVotes}`}
             </p>
           </div>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // Component imports
 import QuestionSwitch from 'components/presentation/QuestionSwitch';
-import QuestionItem from 'components/presentation/QuestionItem';
+import QuestionItem from 'components/container/QuestionItem';
 
 // Data import
 import categories from './categories';

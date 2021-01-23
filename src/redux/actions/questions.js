@@ -2,9 +2,10 @@
 import {
   RECEIVE_QUESTIONS,
   REMOVE_QUESTION_ANSWER,
+  SAVE_QUESTION,
   SAVE_QUESTION_ANSWER,
 } from 'redux/actions/types';
-import {saveQuestionAnswer} from 'utils/api';
+import {saveQuestion, saveQuestionAnswer} from 'utils/api';
 
 /**
  * Action creator for received questions
@@ -15,6 +16,21 @@ export const receiveQuestions = (questions) => ({
   type: RECEIVE_QUESTIONS,
   questions,
 });
+
+export const resolveSaveQuestion = (question) => (dispatch, getState) =>
+  dispatch({
+    type: SAVE_QUESTION,
+    questionID: question.id,
+    question,
+    userID: getState().authedUser,
+  });
+
+export const handleSaveQuestion = (question) => (dispatch) =>
+  saveQuestion(question)
+      .then((formattedQuestion) =>
+        dispatch(resolveSaveQuestion(formattedQuestion)),
+      )
+      .catch((err) => console.log(err));
 
 /**
  * Action creator to remove answer to a question

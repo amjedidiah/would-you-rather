@@ -34,7 +34,7 @@ const Navbar = ({authedUser}) => (
           {navLinks.map(({icon, text, to}) => (
             <li
               key={text}
-              className="nav-item text-capitalize font-weight-bold"
+              className="nav-item text-capitalize fw-bold"
             >
               <a
                 className="nav-link nav-link--custom mx-sm-3"
@@ -66,7 +66,7 @@ const Navbar = ({authedUser}) => (
         </ul>
         {authedUser && (
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item text-capitalize font-weight-bold">
+            <li className="nav-item text-capitalize fw-bold">
               <UserCard className="card--navbar d-flex" />
             </li>
           </ul>
