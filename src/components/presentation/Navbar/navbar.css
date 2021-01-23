@@ -1,0 +1,64 @@
+#navbar {
+  background: var(--tylermcginnis);
+  color: var(--white);
+}
+
+li.nav-item a.nav-link.nav-link--custom {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+li.nav-item a.nav-link.nav-link--custom:hover,
+li.nav-item a.nav-link.nav-link--custom.active {
+  text-decoration: line-through;
+  font-weight: 700;
+  font-size: large;
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.add {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  font-size: 1.5rem;
+  padding: 5px 11px 8px;
+  z-index: 2;
+}
+
+@media (min-width: 576px) {
+  .add {
+    right: 50px;
+    bottom: 45px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #navbar {
+    background: transparent;
+    color: unset;
+  }
+
+  .navbar-brand {
+    /* margin-left: 3.5%; */
+    /* margin-left: 2.5rem; */
+    margin-left: 25px;
+  }
+
+  li.nav-item a.nav-link.nav-link--custom {
+    color: unset;
+  }
+
+  li.nav-item a.nav-link.nav-link--custom:hover,
+  li.nav-item a.nav-link.nav-link--custom.active {
+    color: var(--tylermcginnis);
+    border-bottom: 3px solid var(--tylermcginnis);
+  }
+
+  .add {
+    position: unset;
+    font-size: unset;
+  }
+}

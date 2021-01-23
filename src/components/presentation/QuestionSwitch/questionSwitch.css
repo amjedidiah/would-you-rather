@@ -1,0 +1,16 @@
+li.nav-item .nav-link.nav-link--switch {
+  background: var(--light);
+  color: var(--tylermcginnis);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+li.nav-item .nav-link.nav-link--switch:hover {
+  background: var(--white);
+  color: var(--tylermcginnis);
+}
+
+li.nav-item .nav-link.nav-link--switch.active {
+  color: #fff;
+  background: var(--tylermcginnis);
+}
