@@ -1,12 +1,15 @@
+// Module imports
 import {connect} from 'react-redux';
 import {Redirect, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+// Component imports
 import Layout from 'components/presentation/Layout';
 
 /**
  * PrivateRoute component
  * @component
- * @param {*} proops
+ * @param {*} props
  * @return {object} - The UI DOM object
  *
  * @example
@@ -36,6 +39,11 @@ PrivateRoute.propTypes = {
   children: PropTypes.element,
 };
 
+PrivateRoute.defaultProps = {
+  authedUser: '',
+  children: <div></div>,
+};
+
 /**
  * Maps state to PrivateRoute component props
  * @param {state} state
@@ -43,5 +51,5 @@ PrivateRoute.propTypes = {
  */
 const mapStateToProps = ({authedUser}) => ({authedUser});
 
-// Private  route export
+// Private route export
 export default connect(mapStateToProps)(PrivateRoute);

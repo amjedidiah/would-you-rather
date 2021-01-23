@@ -13,8 +13,13 @@ import Login from 'components/container/Login';
 import PrivateRoute from './PrivateRoute';
 import Leaderboard from 'components/container/Leaderboard';
 
+/**
+ * Routes component
+ * @component
+ * @return {object} - The UI DOM object
+ */
 const Routes = ({authedUser}) => (
-  <Router basename="/">
+  <Router basename="/would-you-rather">
     <Switch>
       <Route
         path="/login"
