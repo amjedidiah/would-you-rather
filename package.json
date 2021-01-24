@@ -41,14 +41,14 @@
   "scripts": {
     "test": "cross-env CI=true react-scripts test --env=jsdom --passWithNoTests",
     "lint": "eslint \"src/**/*.js\" --fix || false",
-    "predev": "yarn lint && yarn test",
+    "prestart": "yarn lint && yarn test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run predev && yarn build",
+    "predeploy": "yarn run prestart && yarn build",
     "deploy": "gh-pages -d build"
   },
-  "pre-commit": "predev",
+  "pre-commit": "prestart",
   "browserslist": {
     "production": [
       ">0.2%",

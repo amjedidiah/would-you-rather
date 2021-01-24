@@ -41,6 +41,8 @@ Users are able to:
 For this application, most of the application’s state is managed by Redux.
 Application’s code is structured and organized in a logical way, and components are modular and reusable.
 
+> Node version used: v.12.19.0
+
 ## Quick Start
 
 ### Installation
