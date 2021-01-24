@@ -71,6 +71,5 @@
     "eslint-plugin-react": "^7.21.5",
     "pre-commit": "^1.2.2"
   },
-  "license": "MIT",
-  "homepage": "amjedidiah.github.io/would-you-rather"
+  "license": "MIT"
 }
