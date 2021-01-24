@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 // Style import
-import './questionSwitch.css';
+import './questionswitch.css';
 
 /**
  * QuestionSwitch Component

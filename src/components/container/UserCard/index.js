@@ -14,7 +14,7 @@ import {
 } from 'redux/selectors';
 
 // Style import
-import './userCard.css';
+import './usercard.css';
 
 // Media imports
 import leaf from './images/leaf.jpg';

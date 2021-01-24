@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Style import
-import './notFound.min.css';
+import './notfound.min.css';
 
 /**
  * NotFound component

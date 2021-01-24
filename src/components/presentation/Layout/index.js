@@ -21,12 +21,12 @@ import './layout.css';
  * const authedUser = 'sarahedo'
  * return <Layout authedUser={authedUser} notFound={notFound}><Login /></Layout>
  */
-const Layout = ({authedUser, children, location}) => (
+const Layout = ({authedUser, children, notFound, location}) => (
   <div
     className={`${!authedUser && 'h-100'} container--layout`}
     style={{
       backgroundImage:
-        authedUser || location?.state?.isQuestionNotFound ?
+        authedUser || location?.state?.isQuestionNotFound || notFound ?
           `url(${authedLayout})` :
           `url(${unauthedLayout})`,
     }}
@@ -46,9 +46,9 @@ const Layout = ({authedUser, children, location}) => (
         )}
         <div
           className={
-            authedUser &&
-            !location?.state?.isQuestionNotFound ?
-            `col-12 col-xl offset-xl-3 mt-5 py-5 py-xl-0` : ''
+            authedUser && !location?.state?.isQuestionNotFound ?
+              `col-12 col-xl offset-xl-3 mt-5 py-5 py-xl-0` :
+              ''
           }
         >
           {children}
@@ -65,10 +65,15 @@ Layout.propTypes = {
   authedUser: PropTypes.string,
   children: PropTypes.element,
   location: PropTypes.object,
+  /**
+   * Layout notFound
+   */
+  notFound: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   authedUser: '',
+  notFound: false,
 };
 
 // Layout export
