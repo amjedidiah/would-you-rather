@@ -22,12 +22,12 @@ import Leaderboard from 'components/container/Leaderboard';
  * return <Routes />
  */
 const Routes = ({authedUser}) => {
-  // const basename = window.location.href.includes('localhost') ?
-  //   '/' :
-  //   '/would-you-rather';
+  const basename = !window.location.href.includes('github') ?
+    '/' :
+    '/would-you-rather';
 
   return (
-    <Router basename={'/'}>
+    <Router basename={basename}>
       <Switch>
         <Route
           path="/login"
