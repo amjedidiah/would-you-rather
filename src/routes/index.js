@@ -21,45 +21,39 @@ import Leaderboard from 'components/container/Leaderboard';
  * @example
  * return <Routes />
  */
-const Routes = ({authedUser}) => {
-  const basename = !window.location.href.includes('github') ?
-    '/' :
-    '/would-you-rather';
-
-  return (
-    <Router basename={basename}>
-      <Switch>
-        <Route
-          path="/login"
-          render={(props) => (
-            <Layout authedUser={authedUser}>
-              <Login {...props} />
-            </Layout>
-          )}
-        />
-        <PrivateRoute exact path="/">
-          <QuestionContainer />
-        </PrivateRoute>
-        <PrivateRoute path="/add">
-          <QuestionForm />
-        </PrivateRoute>
-        <PrivateRoute path="/leaderboard">
-          <Leaderboard />
-        </PrivateRoute>
-        <PrivateRoute path="/questions/:question_id">
-          <QuestionDisplay />
-        </PrivateRoute>
-        <Route
-          render={(props) => (
-            <Layout authedUser={authedUser} notFound={true} {...props}>
-              <NotFound {...props} />
-            </Layout>
-          )}
-        />
-      </Switch>
-    </Router>
-  );
-};
+const Routes = ({authedUser}) => (
+  <Router basename="/">
+    <Switch>
+      <Route
+        path="/login"
+        render={(props) => (
+          <Layout authedUser={authedUser}>
+            <Login {...props} />
+          </Layout>
+        )}
+      />
+      <PrivateRoute exact path="/">
+        <QuestionContainer />
+      </PrivateRoute>
+      <PrivateRoute path="/add">
+        <QuestionForm />
+      </PrivateRoute>
+      <PrivateRoute path="/leaderboard">
+        <Leaderboard />
+      </PrivateRoute>
+      <PrivateRoute path="/questions/:question_id">
+        <QuestionDisplay />
+      </PrivateRoute>
+      <Route
+        render={(props) => (
+          <Layout authedUser={authedUser} notFound={true} {...props}>
+            <NotFound {...props} />
+          </Layout>
+        )}
+      />
+    </Switch>
+  </Router>
+);
 
 Routes.propTypes = {
   authedUser: PropTypes.string,
